@@ -1,0 +1,271 @@
+/*
+  Importing the font family 
+  */
+
+@import url("https://fonts.google.com/specimen/Nunito+Sans");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.7;
+  width: 100%;
+  min-height: 100vh;
+  --bgColor: hsl(0, 0%, 98%);
+  --fontColor: hsl(200, 15%, 8%);
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.dark {
+  --bgColor: hsl(207, 26%, 17%);
+  --fontColor: hsl(0, 0%, 98%);
+  background: var(--bgColor);
+  color: var(--fontColor) !important;
+  --countrybgcolor: hsl(209, 23%, 22%);
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+/*
+  The main styling
+*/
+.wrapper {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper__2 {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.wrapper:first-child {
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  background: var(--countrybgcolor);
+}
+.wrapper h1 {
+  font-size: 1.2rem;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: var(--fontColor);
+}
+.btn-toggle {
+  font-weight: 18px;
+  cursor: pointer;
+  color: var(--fontColor);
+}
+.btn-toggle i {
+  padding-right: 5px;
+}
+.form-element {
+  width: 400px;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0.001rem 3rem;
+  background: var(--countrybgcolor);
+}
+.form-element input {
+  width: 100%;
+  padding: 17px 15px;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--fontColor);
+}
+.form-element i {
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  cursor: pointer;
+}
+.dropdown__wrapper {
+  width: 200px;
+  position: relative;
+  background: var(--countrybgcolor);
+  border-radius: 5px;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 17px 14px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 15px;
+}
+.drop {
+  position: absolute;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  top: 4rem;
+  padding: 10px 14px;
+  width: 100%;
+  border-radius: 5px;
+  background: var(--bgColor);
+}
+.dropdown .filter {
+  letter-spacing: 0.5px;
+}
+.drop i {
+  margin: 5px 0;
+}
+.drop div {
+  margin: 5px 0;
+}
+.country__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+  border-radius: 5px;
+  padding: 30px;
+}
+.country__images {
+  height: 250px;
+}
+.country__images img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+}
+.country-data {
+  padding: 20px 17px;
+}
+.shadow-box {
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+}
+.country-data h4 {
+  padding: 8px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+.country-data p {
+  letter-spacing: 1;
+}
+.country-data p > strong {
+  font-weight: 600;
+}
+i {
+  cursor: pointer;
+}
+.showDropDown {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  .wrapper h1 {
+    font-size: 1rem;
+    font-weight: bold;
+    justify-content: space-between;
+  }
+
+  div.wrapper:first-child {
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    background: var(--countrybgcolor);
+    width: 100%;
+  }
+  .wrapper__2 {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    padding: 1.875rem 2%;
+  }
+
+  .form-element {
+    width: 100%;
+    /* padding: 0.1rem 0.2%; */
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 0.313rem;
+    overflow: hidden;
+  }
+  .form-element input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 0;
+    font-size: 0.938rem;
+    letter-spacing: 0.031rem;
+  }
+  /* .drop {
+    width:70%;
+  } */
+
+  .btn-toggle {
+    gap: 0.5rem;
+  }
+}
